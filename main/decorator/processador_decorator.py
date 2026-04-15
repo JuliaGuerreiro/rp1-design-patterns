@@ -1,4 +1,4 @@
-from decorator.processador_texto import ProcessadorTexto
+from text_decorator.processador_texto import ProcessadorTexto
 
 class ProcessadorDecorator(ProcessadorTexto):
     def __init__(self, processador: ProcessadorTexto = None):
