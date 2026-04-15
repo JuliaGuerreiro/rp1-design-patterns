@@ -37,23 +37,33 @@ O padrão de projeto Singleton é utilizado como forma de disponibilizar apenas 
 
 A equipe de Processamento de Linguagem Natural (NLP) da sua empresa entrou em contato requisitando seus serviços. Eles desejam implementar uma funcionalidade flexível para limpar e transformar textos de comentários de clientes (tweets, reviews) antes de jogá-los no modelo. Na solução implementada atualmente, os projetistas criaram uma classe geral denominada `ProcessadorTexto`, e então derivaram uma série de subclasses para cada combinação de limpeza, tais como `ApenasMinusculas`, `MinusculasESemPontuacao`, etc. Rapidamente você observou que esse problema é grave, pois o número de classes aumentaria vertiginosamente de acordo com a combinação de filtros.
 
-Ao analisar o problema mais de perto, você percebeu que ele poderia ser tratado pelo padrão decorador. Implemente uma demonstração desse padrão para a equipe de NLP com base no modelo já existente no pacote `decorator`. Essa implementação deverá conter as quatro classes de filtro: `LowerCase` (minúsculas), `RemovePunctuation` (remove pontuação), `RemoveStopWords` (remove pronomes e preposições) e `Stemming` (extrai a raiz das palavras). Ainda, as classes deverão reimplementar os métodos `processarTexto` e `tempoEstimadoProcessamento`, de acordo com as seguintes informações:
+Ao analisar o problema mais de perto, você percebeu que ele poderia ser tratado pelo padrão decorador. 
+
+**Atividade:**
+Implemente uma demonstração desse padrão para a equipe de NLP com base no modelo já existente no pacote `text_decorator`. Essa implementação deverá conter as quatro classes de filtro: `LowerCase` (minúsculas), `RemovePunctuation` (remove pontuação), `RemoveStopWords` (remove pronomes e preposições) e `Stemming` (extrai a raiz das palavras). Ainda, as classes deverão reimplementar os métodos `processarTexto` e `tempoEstimadoProcessamento`, de acordo com as seguintes informações:
 
 * O texto deve ser modificado sequencialmente por cada filtro aplicado.
 * Os filtros possuem o seguinte custo computacional (em milissegundos por palavra): `LowerCase` custa 0.25, `RemovePunctuation` custa 0.50, `RemoveStopWords` custa 1.00 e `Stemming` custa 1.50.
+
+> **Importante:** Você deverá criar e implementar o arquivo filtros.py, contendo todas as classes de filtro necessárias. Não é necessário alterar nenhum outro arquivo do projeto.
 
 ## Padrão Strategy
 **Classes presentes no pacote `strategy`**
 
 Você foi designado como responsável por desenvolver o módulo de Tratamento de Dados Ausentes (Missing Values) de uma biblioteca interna da sua empresa. Como os tipos de dados variam muito entre os departamentos, o módulo deve ser genérico o suficiente para aceitar variados métodos de preenchimento (imputação), além de respeitar o princípio de aberto/fechado para facilitar a adição de novas técnicas no futuro.
 
-Ao estudar o problema, você chegou à conclusão de que essa lógica pode ser encapsulada utilizando o padrão strategy. Implemente este padrão com base nos arquivos já existentes no pacote `strategy`. Seu padrão deverá suportar três estratégias diferentes de imputação para colunas numéricas:
+Ao estudar o problema, você chegou à conclusão de que essa lógica pode ser encapsulada utilizando o padrão strategy. 
+
+**Atividade:**
+Implemente este padrão com base nos arquivos já existentes no pacote `strategy`. Seu padrão deverá suportar três estratégias diferentes de imputação para colunas numéricas:
 
 * `MeanImputationStrategy`: Preenche os valores ausentes com a média da coluna.
 * `MedianImputationStrategy`: Preenche os valores ausentes com a mediana da coluna.
 * `ZeroImputationStrategy`: Preenche os valores ausentes com o valor 0.
 
 Para isso, suas classes de imputação deverão herdar a classe abstrata `ImputationStrategy`. Você ainda deverá alterar a classe `DataCleaner` para que ela faça o tratamento utilizando as estratégias criadas. Essa classe deverá implementar um `setStrategy(ImputationStrategy)` para definir a técnica atual e um método `clean_column` para chamar a execução da estratégia definida.
+
+> **Importante:** Você deverá criar e implementar o arquivo strategies.py, contendo todas as classes de estratégia necessárias. Não é necessário alterar nenhum outro arquivo do projeto.
 
 ## Padrão Observer
 **Classes presentes no pacote `observer`**
