@@ -1,5 +1,5 @@
-from decorator.texto_base import TextoBase
-from decorator.filtros import LowerCase, RemovePunctuation, RemoveStopWords, Stemming
+from text_decorator.texto_base import TextoBase
+from text_decorator.filtros import LowerCase, RemovePunctuation, RemoveStopWords, Stemming
 
 if __name__ == "__main__":
     print("=== Sistema de Limpeza de Texto (NLP) ===\n")
