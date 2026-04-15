@@ -1,6 +1,6 @@
 import unittest
 import importlib
-from decorator.texto_base import TextoBase
+from text_decorator.texto_base import TextoBase
 
 class DecoratorTest(unittest.TestCase):
 
@@ -10,14 +10,14 @@ class DecoratorTest(unittest.TestCase):
         
         for filtro in filtros:
             try:
-                modulo = importlib.import_module("decorator.filtros")
+                modulo = importlib.import_module("text_decorator.filtros")
                 getattr(modulo, filtro)
             except (ImportError, AttributeError):
-                self.fail(f"Sem classe {filtro}. Certifique-se de criá-la em decorator/filtros.py")
+                self.fail(f"Sem classe {filtro}. Certifique-se de criá-la em text_decorator/filtros.py")
 
     def test_has_correct_costs(self):
         """Filtros isolados devem ter o custo computacional certo para 1 palavra"""
-        modulo = importlib.import_module("decorator.filtros")
+        modulo = importlib.import_module("text_decorator.filtros")
         
         LowerCase = getattr(modulo, 'LowerCase')
         RemovePunctuation = getattr(modulo, 'RemovePunctuation')
@@ -31,7 +31,7 @@ class DecoratorTest(unittest.TestCase):
 
     def test_filters_combination(self):
         """Filtros devem poder ser combinados sequencialmente"""
-        modulo = importlib.import_module("decorator.filtros")
+        modulo = importlib.import_module("text_decorator.filtros")
         
         LowerCase = getattr(modulo, 'LowerCase')
         RemovePunctuation = getattr(modulo, 'RemovePunctuation')
