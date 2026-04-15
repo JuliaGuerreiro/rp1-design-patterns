@@ -63,7 +63,7 @@ Implemente este padrão com base nos arquivos já existentes no pacote `strategy
 
 Para isso, suas classes de imputação deverão herdar a classe abstrata `ImputationStrategy`. Você ainda deverá alterar a classe `DataCleaner` para que ela faça o tratamento utilizando as estratégias criadas. Essa classe deverá implementar um `setStrategy(ImputationStrategy)` para definir a técnica atual e um método `clean_column` para chamar a execução da estratégia definida.
 
-> **Importante:** Você deverá criar e implementar o arquivo strategies.py, contendo todas as classes de estratégia necessárias. Não é necessário alterar nenhum outro arquivo do projeto.
+> **Importante:** Você deverá criar e implementar o arquivo strategies.py e alterar apenas o arquivo data_cleaner.py. Não é necessário modificar nenhum outro arquivo do projeto.
 
 ## Padrão Observer
 **Classes presentes no pacote `observer`**
