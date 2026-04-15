@@ -1,4 +1,4 @@
-from decorator.processador_decorator import ProcessadorDecorator
+from text_decorator.processador_decorator import ProcessadorDecorator
 
 class TextoBase(ProcessadorDecorator):
     def __init__(self, processador=None):
