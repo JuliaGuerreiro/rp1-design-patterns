@@ -1,5 +1,5 @@
 import unittest
-from singleton.db_connection import DBConnection
+from singleton.db_connection import DataLakeConnection as DBConnection
 
 class SingletonTest(unittest.TestCase):
     
